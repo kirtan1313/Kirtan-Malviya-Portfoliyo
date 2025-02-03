@@ -1,0 +1,257 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* About Section */
+.about-section {
+  height: 100vh;
+  width: 100%;
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  gap: 2rem;
+}
+
+.about-content {
+  flex: 1 1 500px;
+  animation: fadeInLeft 1.5s ease-in-out;
+}
+
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.about-heading .highlight {
+  color: cyan;
+}
+
+.about-heading::after {
+  content: '';
+  width: 50px;
+  height: 3px;
+  background: #00bcd4;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  animation: expandLine 1s ease-out;
+}
+
+.about-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  /* flex: 1 1 500px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Updated Button Styling */
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: linear-gradient(90deg, #00bcd4, #019ca0);
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #019ca0, #00bcd4);
+  color: #fff;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Hover Effect - Ripple Animation */
+.btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.4s ease, height 0.4s ease, opacity 0.4s ease;
+}
+
+.btn:hover::after {
+  width: 200%;
+  height: 200%;
+  opacity: 0;
+}
+
+.about-image {
+  flex: 1 1 500px;
+  animation: fadeInRight 1.5s ease-in-out;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in-out;
+}
+
+.about-image img:hover {
+  filter: grayscale(0%);
+}
+
+.about-content .btn{
+  color: black !important;
+}
+
+.about-content .btn:hover{
+  color: white !important;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes expandLine {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .about-content, .about-image {
+    flex: 1 1 100%;
+    text-align: center;
+    padding-bottom: 20px;
+  }
+  .about-heading {
+    font-size: 2rem;
+  }
+
+  .about-heading::after {
+    left: 38%;
+  }
+
+  .about-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 3rem 1rem;
+  }
+  .about-heading {
+    font-size: 1.8rem;
+  }
+
+  .about-heading::after {
+    left: 35%;
+  }
+
+  .about-description {
+    font-size: 1rem;
+  }
+  .btn {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
+  }
+  .about-image img {
+    max-width: 80%;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 1rem;
+  }
+  .about-heading {
+    font-size: 1.5rem;
+  }
+
+  .about-heading::after {
+    left: 32%;
+  }
+
+  .about-description {
+    font-size: 0.9rem;
+  }
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.8rem;
+  }
+  .about-image img {
+    max-width: 100%;
+  }
+} 
